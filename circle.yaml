@@ -3,8 +3,10 @@ machine:
   services:
     - docker
 dependencies:
-  override:
+  pre:
     - docker info
+test:
+  override:
     - docker build -t masterbranch/nodejs6 .
 deployment:
   production:
